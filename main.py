@@ -1,5 +1,7 @@
 """Write the competition entry to /output/entry.txt.
 
+SPDX-License-Identifier: MIT
+
 Reads entry.txt next to this file and writes its exact contents to the
 output path the grader checks. No network, no environment secrets, no
 input beyond the shipped entry.txt.
