@@ -1,0 +1,23 @@
+"""Write the competition entry to /output/entry.txt.
+
+Reads entry.txt next to this file and writes its exact contents to the
+output path the grader checks. No network, no environment secrets, no
+input beyond the shipped entry.txt.
+"""
+
+import os
+
+ENTRY_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "entry.txt")
+OUTPUT_PATH = "/output/entry.txt"
+
+
+def main():
+    with open(ENTRY_PATH, "r", encoding="utf-8") as f:
+        text = f.read()
+    os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
+    with open(OUTPUT_PATH, "w", encoding="utf-8", newline="") as f:
+        f.write(text)
+
+
+if __name__ == "__main__":
+    main()
