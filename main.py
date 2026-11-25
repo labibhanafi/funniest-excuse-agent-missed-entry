@@ -2,9 +2,12 @@
 
 SPDX-License-Identifier: MIT
 
-Reads entry.txt next to this file and writes its exact contents to the
-output path the grader checks. No network, no environment secrets, no
-input beyond the shipped entry.txt.
+How the generator works: the entry text lives in entry.txt, shipped
+next to this file. main() reads that file verbatim and writes the exact
+same contents to /output/entry.txt, the path the grader checks — a
+byte-for-byte copy with no transformation, no trimming, and no added
+newline. No network, no environment secrets, no input beyond the
+shipped entry.txt.
 """
 
 import os
